@@ -514,6 +514,13 @@ struct CemuConfig
 
 	NetworkService GetAccountNetworkService(uint32 persistentId);
 	void SetAccountSelectedService(uint32 persistentId, NetworkService serviceIndex);
+	
+	// emulated usb devices
+	struct
+	{
+		ConfigValue<bool> emulate_skylander_portal{false};
+		ConfigValue<bool> emulate_infinity_base{true};
+	}emulated_usb_devices{};
 
 	private:
 	GameEntry* GetGameEntryByTitleId(uint64 titleId);
